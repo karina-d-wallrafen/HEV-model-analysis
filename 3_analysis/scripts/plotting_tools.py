@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import matplotlib._mathtext as mathtext
 
 def set_fontsize(base_fontsize=16):
     fontsize = base_fontsize
@@ -9,8 +10,13 @@ def set_fontsize(base_fontsize=16):
         'xtick.labelsize': fontsize,
         'ytick.labelsize': fontsize,
         'legend.fontsize': fontsize,
-        'font.family': "Arial"
+        'font.family': "Arial",
+        'mathtext.fontset': 'custom',
+        'mathtext.rm': 'Arial',
+        'mathtext.it': 'Arial:italic',
+        'mathtext.bf': 'Arial:bold',
     })
+    mathtext.FontConstantsBase.sup1 = 0.4
 
 plt.style.use('default')
 
